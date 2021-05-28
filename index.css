@@ -1,0 +1,744 @@
+* {
+  box-sizing      : border-box;
+  list-style-type : none;
+  margin          : 0;
+  padding         : 0;
+  text-decoration : none;
+}
+
+html{
+  font-family : open sans,sans-serif;
+  font-size   : 62.5%;
+}
+
+body {
+  background-attachment : fixed;
+  background-image      : url(https://image.freepik.com/vector-gratis/fondo-3d-geometrico-rojo-negro_30227-42.jpg);
+  background-repeat     : no-repeat;
+  background-size       : cover;
+  display               : grid;
+  grid-template-rows    : auto 1fr auto;
+}
+
+/* ---///----- ENCABEZADO -----///--- */
+
+.header {
+  align-items      : center;
+  background-color : black;
+  display          : flex;
+  font-family      : 'Zen Dots', cursive;
+  justify-content  : space-between;
+  padding          : 0 6rem;
+  position         : sticky;
+  top              : 0;
+  transition       : 0.3s;
+  z-index          : 100;
+}
+.header:hover {
+  border-bottom-left-radius  : 5rem;
+  border-bottom-right-radius : 5rem;
+  box-shadow                 : 0px 1px 10px rgba(0, 0, 0, 1);
+  transition                 : 0.3s;
+}
+.header:hover .logo__img, .header:hover .nav__menu{
+  height     : 8rem;
+  transition : all 0.3s ease;
+}
+.header:hover ~ main .figure--sticky,
+.header:hover ~ main .rs__nav {
+  top        : 9rem;
+  transition : 0.3s;
+}
+
+/* --- LOGO --- */
+
+  .header__logo {
+    display: block;
+  }
+    .logo__img {
+      height     : 6rem;
+      object-fit : contain;
+      transition : 0.3s;
+      width      : 15rem;
+    }
+
+/* --- NAV --- */
+
+    .nav__menu {
+      color      : aqua;
+      cursor     : default;
+      display    : flex;
+      gap        : 1rem;
+      height     : 6rem;
+      transition : 0.3s;
+    }
+      .nav__menu-li {
+        font-size : 2rem;
+        position  : relative;
+      }
+        .nav__text {
+          align-items      : center;
+          background-color : black;
+          display          : flex;
+          height           : 100%;
+          justify-content  : center;
+          padding          : 0 2rem;
+          z-index          : 10;
+        }
+        .nav__submenu {
+          background-color           : black;
+          border-bottom-left-radius  : 1rem;
+          border-bottom-right-radius : 1rem;
+          display                    : flex;
+          flex-direction             : column;
+          gap                        : 0.3rem;
+          left                       : 0;
+          overflow                   : hidden;
+          padding                    : 1rem;
+          position                   : absolute;
+          top                        : -200%;
+          transition                 : 0.5s;
+          width                      : 100%;
+          z-index                    : -1;
+        }
+        .nav__menu-li:hover .nav__submenu {
+          top        : 100%;
+          transition : 0.2s;
+          z-index    : -1;
+        }
+          .nav__submenu-li {
+            display     : flex;
+            transition  : 0.3s;
+            z-index     : 1;
+          }
+          .submenu-1,
+          .submenu-2,
+          .submenu-3 {
+            transform: translatey(-500%);
+          }
+          .nav__menu-li:hover .submenu-1 {
+            transform  : translateY(0);
+            transition : 0.4s;
+          }
+          .nav__menu-li:hover .submenu-2 {
+            transform  : translateY(0);
+            transition : 0.6s;
+          }
+          .nav__menu-li:hover .submenu-3 {
+            transform  : translateY(0);
+            transition : 0.8s;
+          }
+            .nav__submenu-a {
+              color      : rgb(115, 115, 115);
+              padding    : 0.2rem 0;
+              transition : 0.3s;
+              width      : 100%;
+            }
+            .nav__submenu-li:hover .nav__submenu-a {
+              background : linear-gradient(transparent, rgba(255, 255, 255, 0.4), transparent);
+              color      : white;
+              text-align : center;
+              transform  : scale(1.3);
+              transition : all 0.3s ease;
+            }
+      .donar {
+        width: 12rem;
+      }
+        .donar__a {
+          align-items : center;
+          color       : aqua;
+          cursor      : pointer;
+          display     : flex;
+          height      : 100%;
+          padding     : 0 2rem;
+        }
+        .donar__a:hover {
+          text-decoration : underline;
+        }
+        .donar__span {
+          display: none;
+        }
+        .donar__a:hover .donar__span{
+          display: block;
+          padding: 0 0 0 0.5rem;
+        }
+
+/* ---///----- CUERPO -----///--- */
+
+.main {
+  display               : grid;
+  gap                   : 1rem;
+  grid-template-columns : auto 1fr auto;
+  grid-template-rows    : auto 1fr;
+  padding               : 1rem;
+}
+
+/* ---××× PUBLICIDAD ×××--- */
+
+.main__publicity-1,
+.main__publicity-2,
+.main__publicity-3{
+  background-color : rgba(255, 255, 255, 0.5);
+  padding          : 0.5rem;
+}
+.main__publicity-1,
+.main__publicity-3 {
+  grid-row : 1/3;
+  width    : 15rem;
+}
+.main__publicity-1 {
+  grid-column: 1/2;
+}
+.main__publicity-2 {
+  grid-column : 2/3;
+  grid-row    : 1/2;
+  height      : 12.5rem;
+}
+.main__publicity-3 {
+  grid-column: 3/4;
+}
+  .figure--sticky {
+    position   : sticky;
+    top        : 7rem;
+    transition : 0.3s;
+  }
+    .publicity__span {
+      display     : block;
+      font-size   : 1.2rem;
+      font-weight : 700;
+      text-align  : center;
+    }
+      .publicity__icon {
+        margin: 0 1rem 0 0;
+      }
+    .publicity__a {
+      display: block;
+    }
+
+/* ---××× CONTENEDOR ×××--- */
+
+.main__container {
+  display               : grid;
+  gap                   : 1rem;
+  grid-template-columns : auto 1fr;
+  grid-template-rows    : 1fr 1fr auto;
+}
+.box__nav {
+  background     : radial-gradient(circle, rgb(4, 0, 255), rgb(0, 0, 0));
+  display        : flex;
+  flex-direction : column;
+  font-size      : 1.5rem;
+  overflow       : hidden;
+  position       : sticky;
+  top            : 7rem;
+}
+.box__nav-title {
+  align-items      : center;
+  background-color : black;
+  color            : white;
+  display          : flex;
+  font-family      : 'Lobster', cursive;
+  height           : 4rem;
+  justify-content  : center;
+  padding          : 0 6rem 0 0;
+  text-shadow      : -2px 2px 1px darkred;
+}
+.box__nav-ul {
+  display        : flex;
+  flex-direction : column;
+  gap            : 1rem;
+  padding        : 1rem;
+}
+.box-emoticon {
+  display  : none;
+  position : absolute;
+  right    : 0;
+  top      : 0;
+}
+.span-emoticon {
+  align-items     : center;
+  display         : flex;
+  height          : 4rem;
+  justify-content : center;
+  width           : 6rem;
+}
+
+  /* --- REDES SOCIALES --- */
+
+  .main__container-rs {
+    grid-column : 1/2;
+    grid-row    : 1/2;
+  }
+    .rs__nav-li {
+      display         : flex;
+      justify-content : center;
+      opacity         : 0.7;
+    }
+    .rs__nav-li:hover {
+      opacity: 1;
+    }
+      .rs__nav-li:hover .box-emoticon {
+        display: block;
+      }
+      .rs__nav-a {
+        display    : block;
+        height     : 7rem;
+        transition : 0.3s;
+        width      : 25rem;
+      }
+      .rs__nav-li:hover .rs__nav-a {
+        transform  : scale(1.05);
+        transition : 0.3s;
+      }
+        .rs__nav-img {
+          height     : 100%;
+          object-fit : cover;
+          width      : 100%;
+        }
+
+  /* --- OTRAS PÁGINAS --- */
+
+  .main__container-op {
+    grid-column : 1/2;
+    grid-row    : 2/3;
+  }
+    .op__nav-li:hover .box-emoticon {
+      display: block;
+    }
+    .proximamente__box:hover .span-emoticon{
+      display: none;
+    }
+      .op__nav-a {
+        align-items      : center;
+        background-color : blue;
+        color            : white;
+        display          : flex;
+        height           : 5rem;
+        justify-content  : center;
+        opacity          : 0.7;
+        transition       : 0.3s;
+        width            : 25rem;
+        border           : 0.2rem solid blue;
+      }
+      .op__nav-a:hover {
+        background-color : darkblue;
+        border-color     : aqua;
+        color            : aqua;
+        opacity          : 1;
+        padding          : 0;
+        transform        : scale(1.05);
+      }
+      .proximamente__a {
+        pointer-events: none;
+      }
+
+  /* --- ENTRETENIMIENTO --- */
+
+  .main__container-entertainment {
+    grid-column : 2/3;
+    grid-row    : 1/3;
+  }
+    .title {
+      color       : white;
+      font-family : 'Zen Dots', cursive;
+      font-size   : 4rem;
+      font-weight : 900;
+      line-height : 6rem;
+      padding     : 1rem;
+      text-align  : center;
+      text-shadow : -1px 1px 1px aqua;
+    }
+    .box__entertainment {
+      display : grid;
+      gap     : 1rem;
+      padding : 1rem;
+    }
+      .subtitulo {
+        color       : white;
+        font-family : 'Special Elite', cursive;
+        font-size   : 2.5rem;
+      }
+        .entertainment__ol {
+          display : grid;
+          gap     : 1rem;
+        }
+          .entertainment__li {
+            overflow : hidden;
+            position : relative;
+            z-index  : 1;
+          }
+            #cruz-1,
+            #cruz-2,
+            #cruz-3,
+            #cruz-11,
+            #cruz-12,
+            #cruz-13 {
+              display: none;
+            }
+            .cajita {
+              display: grid;
+            }
+              .entertainment__li-container {
+                align-items      : center;
+                background-color : black;
+                border           : 0.1rem solid white;
+                border-radius    : 1rem;
+                color            : aqua;
+                font-size        : 1.5rem;
+                position         : relative;
+                z-index          : 1;
+              }
+              .entertainment__li:hover .entertainment__li-container {
+                border-color: aqua;
+              }
+                .entertainment__options {
+                  align-items : center;
+                  display     : flex;
+                  height      : 9rem;
+                  padding     : 2rem;
+                }
+                  .cruz {
+                    align-items      : center;
+                    background-color : aqua;
+                    border           : 0.1rem solid black;
+                    display          : flex;
+                    font-size        : 2.5rem;
+                    height           : 3rem;
+                    justify-content  : center;
+                    margin           : 0 2rem 0 0;
+                    width            : 3rem;
+                  }
+                    .entertainment__options-icon {
+                      color      : blue;
+                      transition : 0.3s;
+                    }
+                    #cruz-1:checked ~ .cajita .entertainment__options-icon,
+                    #cruz-2:checked ~ .cajita .entertainment__options-icon,
+                    #cruz-3:checked ~ .cajita .entertainment__options-icon,
+                    #cruz-11:checked ~ .cajita .entertainment__options-icon,
+                    #cruz-12:checked ~ .cajita .entertainment__options-icon,
+                    #cruz-13:checked ~ .cajita .entertainment__options-icon {
+                      color      : red;
+                      transform  : rotateZ(45deg);
+                      transition : 0.3s;
+                    }
+                .entertainment__enter {
+                  align-items      : center;
+                  background-color : gray;
+                  border-radius    : 1rem;
+                  color            : white;
+                  display          : flex;
+                  height           : 3rem;
+                  opacity          : 0.7;
+                  padding          : 2rem 1.5rem;
+                  position         : absolute;
+                  right            : 2rem;
+                  top              : 2.5rem;
+                  z-index          : 1;
+                }
+                .entertainment__enter:hover {
+                  color           : blue;
+                  opacity         : 1;
+                  text-decoration : underline;
+                }
+                .entertainment__enter:active {
+                  color: red;
+                }
+                  .entertainment__enter-icon {
+                    margin: 0 0 0 1rem;
+                  }
+            .menu {
+              background            : radial-gradient(circle, rgb(4, 0, 255), rgb(0, 0, 0));
+              border                : 0.1rem solid white;
+              display               : grid;
+              grid-template-columns : repeat(4, 100%);
+              height                : 0;
+              margin                : auto;
+              overflow-X            : auto;
+              overflow-y            : hidden;
+              transform             : translateY(-50rem);
+              transition            : 0.3s;
+              width                 : 95%;
+            }
+            .entertainment__li:hover .menu {
+              border-color: aqua;
+            }
+            #cruz-1:checked ~ .menu,
+            #cruz-2:checked ~ .menu,
+            #cruz-3:checked ~ .menu,
+            #cruz-11:checked ~ .menu,
+            #cruz-12:checked ~ .menu,
+            #cruz-13:checked ~ .menu {
+              height     : 23.5rem;
+              transform  : translateY(-0.08rem);
+              transition : 0.3s;
+            }
+              .menu__li {
+                padding  : 1rem;
+                position : relative;
+              }
+                .manu__a {
+                  display : block;
+                  height  : 100%;
+                }
+                  .menu__img-box {
+                    height   : 20rem;
+                    overflow : hidden;
+                  }
+                    .menu__img {
+                      height     : 20rem;
+                      object-fit : cover;
+                      transition : 0.3s;
+                      width      : 100%;
+                    }
+                    .menu__a:hover .menu__img {
+                      transform  : scale(1.2);
+                      transition : 0.3s ease;
+                    }
+                  .menu__container {
+                    background : linear-gradient(transparent, rgba(0, 0, 0, 0.5), black);
+                    height     : 20rem;
+                    left       : 0;
+                    margin     : 0 1rem;
+                    overflow   : hidden;
+                    padding    : 1rem;
+                    position   : absolute;
+                    right      : 0;
+                    top        : 1rem;
+                  }
+                    .menu__enter {
+                      border-radius  : 5rem;
+                      display        : flex;
+                      flex-direction : row-reverse;
+                      height         : 4rem;
+                      overflow       : hidden;
+                      position       : absolute;
+                      right          : 1rem;
+                      transition     : 0.3s;
+                      width          : 15rem;
+                    }
+                    .menu__a:hover .menu__enter{
+                      overflow   : hidden;
+                      transition : 0.3s;
+                    }
+                      .menu__enter-icon {
+                        align-items      : center;
+                        background-color : white;
+                        border-radius    : 100%;
+                        color            : aqua;
+                        display          : flex;
+                        font-size        : 3rem;
+                        padding          : 0.5rem;
+                        position         : absolute;
+                        z-index          : 1;
+                      }
+                      .menu__enter-span {
+                        background-color : aqua;
+                        border-radius    : 1rem;
+                        color            : black;
+                        font-size        : 1.5rem;
+                        padding          : 0.3rem 2rem 0.3rem 1rem;
+                        position         : absolute;
+                        right            : 2.5rem;
+                        top              : 0.8rem;
+                        transform        : translateX(50rem);
+                        transition       : 0.3s;
+                      }
+                      .menu__a:hover .menu__enter-span {
+                        transform  : translateX(0);
+                        transition : 0.2s;
+                      }
+                    .menu__type {
+                      align-items     : center;
+                      border-radius   : 0.8rem;
+                      color           : white;
+                      display         : flex;
+                      font-size       : 1.1rem;
+                      font-style      : italic;
+                      font-weight     : 900;
+                      justify-content : center;
+                      letter-spacing  : 0.1rem;
+                      padding         : 0.5rem 1rem;
+                      position        : absolute;
+                      top             : 1.3rem;
+                    }
+                    .menu__episode {
+                      background-color : red;
+                      border-radius    : 0.8rem;
+                      bottom           : 4.5rem;
+                      color            : white;
+                      padding          : 0.5rem 1rem;
+                      position         : absolute;
+                      text-align       : center;
+                    }
+                    .menu__title {
+                      bottom        : 1rem;
+                      color         : white;
+                      font-size     : 1.5rem;
+                      left          : 0;
+                      overflow      : hidden;
+                      position      : absolute;
+                      right         : 0;
+                      text-align    : center;
+                      text-overflow : ellipsis;
+                      transition    : 0.3s ease;
+                      white-space   : nowrap;
+                    }
+                    .menu__a:hover .menu__title {
+                      transition  : 0.3s ease;
+                    }
+
+  /* --- NOTICIAS --- */
+
+  .main__container-news {
+    grid-column : 1/3;
+    grid-row    : 3/4;
+  }
+  .news__ul {
+    background-color      : black;
+    border-radius         : 1rem;
+    border                : 0.2rem solid white;
+    display               : grid;
+    grid-template-columns : repeat(5, 25%);
+    overflow-x            : scroll;
+  }
+  .news__ul:hover {
+    border-color: aqua;
+  }
+    .news__li {
+      position: relative;
+    }
+      .news__a {
+        display : block;
+        margin  : 1rem;
+      }
+        .news__a-container {
+          background-color : white;
+          border-radius    : 1rem;
+          border           : 0.2rem solid white;
+          display          : flex;
+          flex-direction   : column;
+          justify-content  : center;
+          padding          : 0.5rem;
+        }
+        .news__ul:hover .news__a-container {
+          border-color: gray;
+        }
+        .news__a:hover .news__a-container {
+          background-color : rgb(230, 255, 255);
+          border-color     : aqua;
+        }
+          .news__img {
+            height     : 15rem;
+            object-fit : cover;
+            width      : 100%;
+          }
+          #read-1,
+          #read-2,
+          #read-3,
+          #read-4,
+          #read-5 {
+            display: none;
+          }
+          .news__title {
+            color         : black;
+            display       : block;
+            font-size     : 2rem;
+            overflow      : hidden;
+            padding       : 0.5rem;
+            text-overflow : ellipsis;
+            white-space   : nowrap;
+          }
+          #read-1:checked ~ .news__title,
+          #read-2:checked ~ .news__title,
+          #read-3:checked ~ .news__title,
+          #read-4:checked ~ .news__title,
+          #read-5:checked ~ .news__title {
+            height      : auto;
+            white-space : normal;
+          }
+          .news__read {
+            background-color : gray;
+            border-radius    : 0.5rem;
+            color            : blue;
+            display          : block;
+            opacity          : 0.7;
+            padding          : 0.5rem;
+            text-align       : center;
+          }
+          .news__read:hover {
+            opacity: 1;
+          }
+        .news__icon-box {
+          bottom    : 1rem;
+          color     : black;
+          display   : none;
+          font-size : 15rem;
+          left      : 1rem;
+          opacity   : 0.5;
+          position  : absolute;
+          right     : 1rem;
+          top       : 1rem;
+          z-index   : 1;
+        }
+        .news__a:hover .news__icon-box {
+          align-items     : center;
+          display         : flex;
+          justify-content : center;
+        }
+        .news__more {
+          bottom     : 1rem;
+          left       : 1rem;
+          position   : absolute;
+          right      : 1rem;
+          text-align : center;
+          top        : 1rem;
+        }
+        .news__more-icon {
+          font-size: 5rem;
+          color: black;
+          opacity: 0.5;
+        }
+        .news__a:hover .news__more-icon {
+          opacity: 1;
+        }
+
+/* ---///----- FOOTER -----///--- */
+
+.footer {
+  background-color : black;
+  color            : white;
+  display          : flex;
+  justify-content  : space-between;
+  padding          : 0.5rem 6rem;
+}
+  .footer__title-box {
+    display : flex;
+    gap     : 1rem;
+  }
+    .footer__title {
+      font-family : 'Zen Dots', cursive;
+      font-size   : 4rem;
+      line-height : 5.5rem;
+    }
+    .footer__subtitle {
+      align-self : center;
+      font-size  : 1.5rem;
+    }
+  .footer__nav {
+    align-items : center;
+    display     : flex;
+  }
+    .footer__ul {
+    display               : grid;
+    font-size             : 1.5rem;
+    gap                   : 2rem;
+    grid-template-columns : repeat(3, auto);
+    padding               : 1rem;
+    }
+    .footer__a {
+      color: rgba(255, 255, 255, 0.5);
+    }
+    .footer__a:hover {
+      color: white;
+    }
